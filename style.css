@@ -1,0 +1,29 @@
+* {
+    background-color: #a0d2eb;
+    color: #494d5f;
+}
+
+.score_box {
+    display: flex;
+    font-style: bold;
+    font-size: large;
+    margin-bottom: 25px;
+}
+
+#p_score {
+    margin-right: 50px;
+}
+
+.btn_desc {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #d0bdf4;
+    border-color: #8458b3;
+    border-radius: 12px;
+    padding: 12px;
+
+}
+

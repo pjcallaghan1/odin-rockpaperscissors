@@ -1,4 +1,17 @@
 const prompt = require('prompt-sync')();
+h_win = 0;
+c_win = 0;
+
+const playGame = document.querySelector('#playGame');
+const game_menu = document.querySelector('.game_menu');
+const btn_options = document.querySelectorAll('.option');
+const results = document.querySelector('#results');
+btn_options.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+        let h_choice = e.target.id;
+         
+    })
+})
 
 function getComputerChoice() {
     var choice = Math.random()
@@ -13,16 +26,8 @@ function getComputerChoice() {
     return c_choice;
 }
 
-function getHumanChoice() {
-    let h_choice = prompt("Please Choose One of The Following: Rock, Paper or Scissors?").toLowerCase();
-    
-    if (h_choice === null) {
-        console.log('You didnt enter anything')
-    }
-    return h_choice;
-}
-
 function playRound(h_choice, c_choice) {
+    h
     if ((h_choice == 'rock' && c_choice == 'paper') ||
     (h_choice == 'paper' && c_choice == 'scissors') ||
     (h_choice == 'scissors' && c_choice == 'rock'))  {
@@ -40,13 +45,9 @@ function playRound(h_choice, c_choice) {
 
 
 function playGame() {
-    h_win = 0;
-    c_win = 0;
-    for (let i = 0; i < 5; i++) {
+    for (h_win < 5; c_win < 5;) {
         playRound(getHumanChoice(),getComputerChoice())
     }
-
-    console.log(`You: ${h_win}, Computer: ${c_win}`)
 }
 
 playGame()
