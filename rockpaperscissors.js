@@ -6,13 +6,8 @@ const playGame = document.querySelector('#playGame');
 const game_menu = document.querySelector('.game_menu');
 const btn_options = document.querySelectorAll('.option');
 const results = document.querySelector('#results');
-btn_options.forEach(function(button) {
-    button.addEventListener('click', function(e) {
-        let h_choice = e.target.id;
-         
-    })
-})
 
+playGame
 function getComputerChoice() {
     var choice = Math.random()
     c_choice = ""
@@ -26,28 +21,36 @@ function getComputerChoice() {
     return c_choice;
 }
 
+btn_options.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+        let h_choice = e.target.id;
+        results.textContent = `You selected: ${h_choice}, Computer selected: ${c_choice}.`;
+        playRound(h_choice, c_choice)
+        checkWinner()
+    })
+})
 function playRound(h_choice, c_choice) {
     h
     if ((h_choice == 'rock' && c_choice == 'paper') ||
     (h_choice == 'paper' && c_choice == 'scissors') ||
     (h_choice == 'scissors' && c_choice == 'rock'))  {
         c_win++;
-        console.log(`Computer Wins! ${c_choice} beats ${h_choice}`);
+        results.textContent += ` Computer Wins!`;
     } else if ((h_choice == 'rock' && c_choice == 'scissors') ||
     (h_choice == 'paper' && c_choice == 'rock') ||
     (h_choice == 'scissors' && c_choice == 'paper')) {
-          h_win++;
-          console.log(`You Win! ${h_choice} beats ${c_choice}.`);     
+        h_win++;
+        results.textContent += ` You Win!`;    
     } else {
-        console.log(`You both chose ${h_choice}. Try Again.`);
-    }
-}   
+        results.textContent += ` No Winner. Try Again.`;
+    };
+};   
 
 
-function playGame() {
-    for (h_win < 5; c_win < 5;) {
-        playRound(getHumanChoice(),getComputerChoice())
-    }
-}
+function checkWinner() {
+    if (h_win == 5) {
 
-playGame()
+    } else if (c_win == 5) {
+
+    };
+};
