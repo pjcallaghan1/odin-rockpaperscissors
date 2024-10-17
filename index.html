@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Rock, Paper Scissors</title>
+        <script src="rockpaperscissors.js" defer></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -13,10 +14,10 @@
         </div>
         <div class="game_menu">
             <div class="score_box">
-                <div id="p_score">Your Score: 0</div>
-                <div id="c_score">Computer Score: 0</div>
-                <div id="results"></div>
+                <div id="h_score">Your Score: 0</div>
+                <div id="c_score">Computer Score: 0</div>   
             </div>
+                <div id="results"></div>
             <div class="btn_desc">Please Click Rock, Paper, or Scissors.</div>
                 <div class="btn_box">
                 <button id="rock" class="option">Rock</button>
@@ -25,9 +26,9 @@
             </div>
         </div>
         <div class="end_menu">
-            <div class="end_score"></div>
+            <div id="end_score"></div>
             <button id="replay">Play Again</button>
         </div>
-    <script src="rockpaperscissors.js"></script>
+
     </body>
 </html>
